@@ -1,3 +1,11 @@
+<?php 
+  require_once '../Model/UserFiles.php';
+  $userfiles = new UserFiles;
+
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -54,80 +62,36 @@
                 <td>Title</td>
                 <td>Status</td>
                 <td>Remarks</td>
+                <td>DateSubmitted</td>
+                <td>Date Approved/Disapproved</td>
                 <td>Action</td>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Online Archiving System</td>
-                <td>Declined</td>
-                <td>Reason For Declining..</td>
-                <td><i class="material-icons" data-toggle="tooltip" title="Edit">visibility</i></td>
-              </tr>
-              <tr>
-                <td>Online Archiving System</td>
-                <td>Declined</td>
-                <td>Reason For Declining..</td>
-                <td><i class="material-icons" data-toggle="tooltip" title="Edit">visibility</i></td>
-              </tr>
-              <tr>
-                <td>Online Archiving System</td>
-                <td>Declined</td>
-                <td>Reason For Declining..</td>
-                <td><i class="material-icons" data-toggle="tooltip" title="Edit">visibility</i></td>
-              </tr>
-              <tr>
-                <td>Online Archiving System</td>
-                <td>Declined</td>
-                <td>Reason For Declining..</td>
-                <td><i class="material-icons" data-toggle="tooltip" title="Edit">visibility</i></td>
-              </tr>
-              <tr>
-                <td>Online Archiving System</td>
-                <td>Declined</td>
-                <td>Reason For Declining..</td>
-                <td><i class="material-icons" data-toggle="tooltip" title="Edit">visibility</i></td>
-              </tr>
-              <tr>
-                <td>Online Archiving System</td>
-                <td>Declined</td>
-                <td>Reason For Declining..</td>
-                <td><i class="material-icons" data-toggle="tooltip" title="Edit">visibility</i></td>
-              </tr>
-              <tr>
-                <td>Online Archiving System</td>
-                <td>Declined</td>
-                <td>Reason For Declining..</td>
-                <td><i class="material-icons" data-toggle="tooltip" title="Edit">visibility</i></td>
-              </tr>
-              <tr>
-                <td>Online Archiving System</td>
-                <td>Declined</td>
-                <td>Reason For Declining..</td>
-                <td><i class="material-icons" data-toggle="tooltip" title="Edit">visibility</i></td>
-              </tr>
-              <tr>
-                <td>Online Archiving System</td>
-                <td>Declined</td>
-                <td>Reason For Declining..</td>
-                <td><i class="material-icons" data-toggle="tooltip" title="Edit">visibility</i></td>
-              </tr>
-              <tr>
-                <td>Online Archiving System</td>
-                <td>Declined</td>
-                <td>Reason For Declining..</td>
-                <td><i class="material-icons" data-toggle="tooltip" title="Edit">visibility</i></td>
-              </tr>
-              <tr>
-                <td>Online Archiving System</td>
-                <td>Declined</td>
-                <td>Reason For Declining..</td>
-                <td><i class="material-icons" data-toggle="tooltip" title="Edit">visibility</i></td>
-              </tr>
+             <?php $userfiles->myFilesHistory($userID); ?>
             </tbody>
         </table>
       </div>
 
+      <div class="modal fade" id="viewThesisFile" tabindex="-1"  aria-hidden="true">
+  <div class="modal-dialog" style="width: 80% !important;" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Show Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="displayThesisDetails">
+        
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
       <?php include 'footer.php'; ?>
       

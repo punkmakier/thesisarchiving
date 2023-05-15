@@ -19,7 +19,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-light  fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="index.html"> <img src="img/ptcoppa.png" alt="logo"
+                <a class="navbar-brand" href="index.php"> <img src="img/ptcoppa.png" alt="logo"
                         style="height: 40px; width: 40px;"> <span class="text-warning">PTC</span> <span
                         class="text-light"> - Archives</span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -30,11 +30,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item ">
-                            <a class="nav-link" href="index.html"><i class="bi bi-house"></i> Home</a>
+                            <a class="nav-link" href="index.php"><i class="bi bi-house"></i> Home</a>
                         </li>
                      
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html"><i class="bi bi-info-square"></i> About</a>
+                            <a class="nav-link" href="about.php"><i class="bi bi-info-square"></i> About</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="active" href="login.php"><i class="bi bi-box-arrow-in-right"></i> Login</a>
@@ -63,7 +63,7 @@
                           <input required type="email" name="Email" id="" placeholder="Email" class="email">
                           <input required type="password" name="Password" id="" placeholder="Password" class="pass">
                           <i class="show bi bi-eye"></i>
-                            <a href="forgetpass.html" class="forget"> Forget Password </a>
+                            <a href="forgetpass.php" class="forget"> Forget Password </a>
                             <select class="account" required name="UserType">
                                 <option value="">Account Type</option>
                                 <option value="Student">Student</option>
@@ -119,7 +119,6 @@
                     url: "Controller/UserLogin.php",
                     data: formData,
                     success: function(response){
-                        alert(response)
                         if(response == "Student"){
                             window.location.href="user/dashboard.php";
                         }

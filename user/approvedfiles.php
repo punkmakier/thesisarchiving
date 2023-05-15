@@ -1,3 +1,10 @@
+<?php 
+  require_once '../Model/UserFiles.php';
+  $userfiles = new UserFiles;
+
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -53,79 +60,14 @@
         <table class="table table-striped mb-5" id="thisTable">
             <thead>
               <tr>
-                <td>Title</td>
-                <td>Status</td>
-                <td>Remarks</td>
-                <td>Action</td>
+                <td class='text-center'>Title</td>
+                <td class='text-center'>Status</td>
+                <td class='text-center'>Date Submitted</td>
+                <td class='text-center'>Action</td>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Online Archiving System</td>
-                <td>Declined</td>
-                <td>Reason For Declining..</td>
-                <td><i class="material-icons" data-toggle="tooltip" title="Edit">visibility</i></td>
-              </tr>
-              <tr>
-                <td>Online Archiving System</td>
-                <td>Declined</td>
-                <td>Reason For Declining..</td>
-                <td><i class="material-icons" data-toggle="tooltip" title="Edit">visibility</i></td>
-              </tr>
-              <tr>
-                <td>Online Archiving System</td>
-                <td>Declined</td>
-                <td>Reason For Declining..</td>
-                <td><i class="material-icons" data-toggle="tooltip" title="Edit">visibility</i></td>
-              </tr>
-              <tr>
-                <td>Online Archiving System</td>
-                <td>Declined</td>
-                <td>Reason For Declining..</td>
-                <td><i class="material-icons" data-toggle="tooltip" title="Edit">visibility</i></td>
-              </tr>
-              <tr>
-                <td>Online Archiving System</td>
-                <td>Declined</td>
-                <td>Reason For Declining..</td>
-                <td><i class="material-icons" data-toggle="tooltip" title="Edit">visibility</i></td>
-              </tr>
-              <tr>
-                <td>Online Archiving System</td>
-                <td>Declined</td>
-                <td>Reason For Declining..</td>
-                <td><i class="material-icons" data-toggle="tooltip" title="Edit">visibility</i></td>
-              </tr>
-              <tr>
-                <td>Online Archiving System</td>
-                <td>Declined</td>
-                <td>Reason For Declining..</td>
-                <td><i class="material-icons" data-toggle="tooltip" title="Edit">visibility</i></td>
-              </tr>
-              <tr>
-                <td>Online Archiving System</td>
-                <td>Declined</td>
-                <td>Reason For Declining..</td>
-                <td><i class="material-icons" data-toggle="tooltip" title="Edit">visibility</i></td>
-              </tr>
-              <tr>
-                <td>Online Archiving System</td>
-                <td>Declined</td>
-                <td>Reason For Declining..</td>
-                <td><i class="material-icons" data-toggle="tooltip" title="Edit">visibility</i></td>
-              </tr>
-              <tr>
-                <td>Online Archiving System</td>
-                <td>Declined</td>
-                <td>Reason For Declining..</td>
-                <td><i class="material-icons" data-toggle="tooltip" title="Edit">visibility</i></td>
-              </tr>
-              <tr>
-                <td>Online Archiving System</td>
-                <td>Declined</td>
-                <td>Reason For Declining..</td>
-                <td><i class="material-icons" data-toggle="tooltip" title="Edit">visibility</i></td>
-              </tr>
+                <?php $userfiles->myFiles($userID); ?>
             </tbody>
         </table>
       </div>
@@ -169,7 +111,27 @@
                 </div>
               </div>
 
+  
+              <!-- Modal -->
+<div class="modal fade" id="viewThesisFile" tabindex="-1"  aria-hidden="true">
+  <div class="modal-dialog" style="width: 80% !important;" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Show Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="displayThesisDetails">
         
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 

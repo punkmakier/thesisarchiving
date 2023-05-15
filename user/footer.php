@@ -29,11 +29,13 @@
 
 
     <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="../js/jquery-3.3.1.slim.min.js"></script>
+    <!-- <script src="../js/jquery-3.3.1.slim.min.js"></script> -->
     <script src="../js/popper.min.js"></script>
+    
     <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/jquery-3.3.1.min.js"></script>
+    <!-- <script src="../js/jquery-3.3.1.min.js"></script> -->
     <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script type="text/javascript">
@@ -89,6 +91,23 @@
 
 
 
+        $(".viewThesis").click(function(){
+                        var id = $(this).attr('id')
+
+                        $.ajax({
+                            type: "POST",
+                            url: "../Controller/AppDisApp.php",
+                            data: {UID : id, Action: "ShowThesis"},
+                            success: function (response) {
+                              $("#displayThesisDetails").html(response)
+                                $("#viewThesisFile").modal('show')
+
+                        }
+                        
+                    })
+
+
+                })
 
 
 

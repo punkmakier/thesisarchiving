@@ -16,18 +16,18 @@
     
     <nav class="navbar navbar-expand-lg navbar-light  fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="index.html"> <img src="img/ptcoppa.png" alt="logo" style="height: 40px; width: 40px;"> <span class="text-warning">PTC</span> <span class="text-light">  - Archives</span></a>
+          <a class="navbar-brand" href="index.php"> <img src="img/ptcoppa.png" alt="logo" style="height: 40px; width: 40px;"> <span class="text-warning">PTC</span> <span class="text-light">  - Archives</span></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item ">
-                <a class="nav-link" id="active" href="index.html"><i class="active bi bi-house"></i> Home</a>
+                <a class="nav-link" id="active" href="index.php"><i class="active bi bi-house"></i> Home</a>
               </li>
     
               <li class="nav-item">
-                <a class="nav-link" href="about.html"><i class="bi bi-info-square"></i> About</a>
+                <a class="nav-link" href="about.php"><i class="bi bi-info-square"></i> About</a>
               </li> 
               <li class="nav-item">
                 <a class="nav-link" href="login.php"><i class="bi bi-box-arrow-in-right"></i> Login</a>
