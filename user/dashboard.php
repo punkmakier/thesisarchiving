@@ -39,12 +39,13 @@
       <?php include 'sidebar.php'; ?>
 
       <?php include 'topnavbar.php'; ?>
-
+    
 
 
 
       <!--------page-content---------------->
 
+      <div id="content"></div>
 
 
       <?php include 'footer.php'; ?>

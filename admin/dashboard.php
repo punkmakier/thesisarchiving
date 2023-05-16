@@ -97,6 +97,7 @@
                           </div>
                       </div>
                       <div class="card-content">
+    
                           <p class="category"><strong>New Files</strong></p>
                           <h3 class="card-title"><?php $admin->FilesStatus("Pending"); ?></h3>
                       </div>
@@ -204,7 +205,7 @@
                             <table class="tbladmin">
                                 <tr class="tradmin">
                                     <td class="tdadmin">
-                                        <p class="category">The <span class="titleupdated">Online Archiving System</span>  has been updated <span><?php echo time_elapsed_string($admin->getFileStatusLastUpdate(), true); ?></span><a href="view.php" class="viewipdate"> <u> View Details</u></a></p>
+                                        <p class="category">The <span class="titleupdated">Online Archiving System</span>  has been updated <span><?php echo time_elapsed_string($admin->getFileStatusLastUpdate(), true); ?></span><a href="history.php" class="viewipdate"> <u> View Details</u></a></p>
 
                                     </td>
                                 </tr>

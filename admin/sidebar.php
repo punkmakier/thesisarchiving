@@ -42,9 +42,11 @@
 
 
                     <li class="">
-                        <a href="view.php"><i class="material-icons">view_timeline</i><span>View</span></a>
+                        <a href="view.php"><i class="material-icons">view_timeline</i><span>Published Files</span></a>
                     </li>
-
+                    <li class="">
+                        <a href="declinefiles.php"><i class="material-icons">view_timeline</i><span>Declined Files</span></a>
+                    </li>
 
                 </ul>
 

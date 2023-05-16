@@ -67,6 +67,23 @@
 
 
 
+        public function forgotPassword($Email,$SchoolID){
+            $con = $this->openConnection();
+            $sqlQ = $con->prepare("SELECT `Password` FROM `users` WHERE `School_ID`='$SchoolID' AND `email`='$Email'");
+            if($sqlQ->execute()){
+                if($sqlQ->rowCount() > 0){
+                    while($row = $sqlQ->fetch()){
+                        return $row['Password'];
+                    }
+                }else{
+                    return "NoFound";
+                }
+
+            }
+            
+        }
+
+
     }
 
 

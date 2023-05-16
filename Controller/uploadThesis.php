@@ -3,7 +3,7 @@
 require_once '../Model/UploadThesisFile.php';
 $upload = new UploadThesisFile;
 if(isset($_POST['Tittle'])){
-
+    $SubmittedBy = $_POST['SubmittedBy'];
     $Title = $_POST['Tittle'];
     $Department = $_POST['Department'];
     $DateUpload = $_POST['DateUpload'];
@@ -20,7 +20,7 @@ if(isset($_POST['Tittle'])){
     $final_new_name = uniqid("thesis-",true).'.'.$signatures_img_ex_lc;
     $img_upload_path = "../ThesisFile/".$final_new_name;
 
-    if($upload->uploadThesis($thesis_id,$Title,$Department,$DateUpload,$final_new_name,$participants)){
+    if($upload->uploadThesis($thesis_id,$Title,$Department,$DateUpload,$final_new_name,$participants,$SubmittedBy)){
         move_uploaded_file($tmp_name, $img_upload_path);
         header("Location: ../user/uploadfiles.php?added=success");
     }

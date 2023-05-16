@@ -62,7 +62,7 @@
                   <div class="row">
                     <div class="col">
                       <div class="input-group mb-3">
-                        <input type="hidden" value="<?php echo $userID; ?>">
+                        <input type="hidden" name="SubmittedBy" value="<?php echo $userID; ?>">
                         <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-t"></i></span>
                         <input required name="Tittle" type="text" class="form-control" placeholder="Title of Thesis Paper" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
@@ -125,12 +125,35 @@
 
 
 
+        
 
   
         <?php include 'footer.php'; ?>
 
 
 
+        <?php
+          if(isset($_GET['added']) == "success"){
+            echo "
+              <script>
+                Swal.fire({
+                  title: 'Success',
+                  text: 'You have successfully added a new file',
+                  icon: 'success',
+                  showCancelButton: false,
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33',
+                  confirmButtonText: 'Okay'
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    window.location.href = 'uploadfiles.php';
+                  }
+                })
+              </script>
+            ";
+          }
+        
+        ?>
   </body>
 
 </html>

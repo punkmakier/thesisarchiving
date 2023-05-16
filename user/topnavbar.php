@@ -8,7 +8,7 @@
 
 <!--------page-content---------------->
 
-<div id="content">
+<div id="content" style="height: 100vh">
 
 <!--top--navbar----design--------->
 
@@ -48,25 +48,10 @@
                   <i class="notifsicons fa-solid fa-bell"></i>
                 </a>
                 <ul class="dropnotif dropdown-menu small-menu">
-                  <li>
-                    <table class="notiftbl">
-                      <tr class="notiftr">
-                        <td class="notiftd">
-
-                          <p class="contentparanotif"> <span class="notifyicon material-icons">
-                              notifications_active
-                            </span> &nbsp; &nbsp; &nbsp; &nbsp; Your file has been published <a href="#"
-                              class="notiview"> <u>View</u></a></p>
-
-
-                        </td>
-                      </tr>
-                    </table>
-
-
-
-                  </li>
-
+                  <?php
+                    $user->showNotifBell($userID);
+                  
+                  ?>
 
                 </ul>
               </li>
@@ -114,7 +99,7 @@
 <!-- Accunt Modal HTML -->
 <div id="accountmodel" class="modal fade">
                 <div class="modal-dialog">
-                  <div class="accountdetails modal-content">
+                  <div class="accountdetails modal-content" style="margin: 30px auto;">
                     <form id="updateAccountForm">
                       <div class="headermodal modal-header">
                         <h4 class="modal-title">Account Details</h4>

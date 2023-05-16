@@ -39,5 +39,35 @@
             return $row['Password'];
         }
 
+
+        public function showNotifBell($UserID){
+            $con = $this->openConnection();
+            $sqlQ = $con->prepare("SELECT * FROM `thesisfile` WHERE `SubmittedBy` = '$UserID' AND Status = 'Approved' OR Status = 'Disapproved'");
+            if($sqlQ->execute()){
+                if($sqlQ->rowCount() > 0){
+                    while($row = $sqlQ->fetch()){
+                        $status = $row['Status'];
+                        echo "
+                        <li>
+                        <table class='notiftbl'>
+                          <tr class='notiftr'>
+                            <td class='notiftd'>
+                              <p class='contentparanotif'> <span class='notifyicon material-icons'>
+                                  notifications_active
+                                </span> &nbsp; &nbsp; &nbsp; &nbsp; Your file has been ${status} <a href='history.php'
+                                  class='notiview'> <u>View</u></a></p>
+                            </td>
+                          </tr>
+                        </table>
+                      </li>
+                        
+                        ";
+                    }
+                }
+            }
+            
+            
+        }
+
     }
 ?>

@@ -48,7 +48,8 @@
 
         public function approveSelectedAccount($id,$registered){
             $con = $this->openConnection();
-            $sqlQ = $con->prepare("UPDATE users SET isRegistered = $registered WHERE id = $id");
+            $curDate = date("Y-m-d H:i:s");
+            $sqlQ = $con->prepare("UPDATE users SET isRegistered = $registered, `LastUpdate` = '$curDate' WHERE id = $id");
             if($sqlQ->execute()){
                 $statusAcc = "";
                 if($registered == 1){
@@ -112,7 +113,7 @@
         
         public function displayApproveDisapprove(){
             $con = $this->openConnection();
-            $sqlQ = $con->prepare("SELECT * FROM history ORDER BY DateCreated DESC");
+            $sqlQ = $con->prepare("SELECT * FROM history ORDER BY DateCreated ASC");
             if($sqlQ->execute()){
                 while($row = $sqlQ->fetch()){
                     $Description = $row['Description'];
@@ -158,7 +159,8 @@
 
         public function updateThesisFile($id,$status,$remarks){
             $con = $this->openConnection();
-            $sqlQ = $con->prepare("UPDATE thesisfile SET Status = '$status', `Remarks`='$remarks' WHERE Thesis_ID = '$id'");
+            $curDate = date("Y-m-d H:i:s");
+            $sqlQ = $con->prepare("UPDATE thesisfile SET Status = '$status', `Remarks`='$remarks', `LastUpdate` = '$curDate' WHERE Thesis_ID = '$id'");
             if($sqlQ->execute()){
                 $statusAcc = "";
                 if($status == "Approved"){
@@ -233,9 +235,9 @@
         }
 
 
-        public function displayApprovedFiles(){
+        public function displayApprovedFiles($Status){
             $con = $this->openConnection();
-            $sqlQ = $con->prepare("SELECT Thesis_ID,Title,Department,DateUpload, date(`LastUpdate`) AS DateApproved FROM thesisfile WHERE Status = 'Approved'");
+            $sqlQ = $con->prepare("SELECT Thesis_ID,Title,Department,DateUpload, date(`LastUpdate`) AS DateApproved FROM thesisfile WHERE Status = '$Status'");
             if($sqlQ->execute()){
                 while($row = $sqlQ->fetch()){
                     $id = $row['Thesis_ID'];
@@ -314,7 +316,7 @@
                         </div>
                         <div class='col-4'>
                             <div class='form-group'>
-                                <p>Date Approved</p>
+                                <p>Date ${Status}</p>
                                 <input type='text' value='${LastUpdate}' readonly class='form-control mt-3'>
                             </div>
                         </div>
